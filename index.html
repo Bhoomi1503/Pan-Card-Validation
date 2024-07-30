@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pan card</title>
+    <!-- <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js"></script> -->
+    <style>
+        .con{
+            background-color: orchid;
+            padding: 20px;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+   <div class="con" id="con">
+    <h1>PAN card validation</h1>
+    <label for="">Pan card:</label>
+    <input type="text" placeholder="DSEKT1234E" id="input">
+    <hr>
+    <button id="btn" onclick="press()">Submit</button>
+   </div>
+   <script>
+    function press(){
+        let val=document.getElementById("input").value;
+        let val1=/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
+        if(!val1.test(val)){
+            alert("Invalid Pan number");
+            return false;
+        }
+        else{
+            alert("Correct Pan number");
+        }
+    }
+   </script>
+</body>
+</html>
